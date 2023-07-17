@@ -23,16 +23,18 @@ public class Role {
 
     private String name;
 
-    @ToString.Exclude
-    @JsonBackReference
-    @ManyToMany (mappedBy = "roles")
-    private List<User> users;
+//    @ToString.Exclude
+//    @JsonBackReference
+//    @ManyToMany (mappedBy = "roles")
+//    private List<User> users;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+  /*  @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "roles_authorities",
             joinColumns=@JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id") )
-    private List<Authority> authorities;
+    private List<Authority> authorities;*/
+  @ManyToMany
+  private List<Authority> authorities;
 
 }
 

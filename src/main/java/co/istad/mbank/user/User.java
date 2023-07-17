@@ -46,7 +46,7 @@ public class User {
 
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "users_registration",
+    @JoinTable(name = "users_roles",
             joinColumns=@JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id") )
     private List<Role> roles;
@@ -55,6 +55,6 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_accounts",
             joinColumns=@JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id") )
+            inverseJoinColumns = @JoinColumn(name = "account_id") )
     private List<Account> accounts;
 }

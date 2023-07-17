@@ -1,5 +1,6 @@
 package co.istad.mbank.transaction;
 
+import co.istad.mbank.account.Account;
 import co.istad.mbank.accountTypes.AccountTypes;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "users")
+@Table(name = "transaction")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,5 +36,10 @@ public class Transaction {
     private Integer phoneNumber;
     @Column(name = "transfered_at")
     private LocalDateTime transferedAt;
+
+    // Transition
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    private Account account;
 
 }

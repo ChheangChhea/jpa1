@@ -23,8 +23,12 @@ public class AccountTypes {
     private String name;
 
 
-    @ToString.Exclude
-    @JsonBackReference
-    @ManyToMany
-    private List<Account> accounts;
+
+//    @OneToMany(fetch = FetchType.LAZY)
+//    private List<Account> accounts;
+
+   /* @ToString.Exclude
+   @ManyToMany
+   @JoinColumn(name = "account_id",nullable = false)
+    private List<Account> accounts;*/
 }
