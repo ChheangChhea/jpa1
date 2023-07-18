@@ -1,19 +1,17 @@
 package co.istad.mbank.account;
 
 import co.istad.mbank.accountTypes.AccountTypes;
-import co.istad.mbank.transaction.Transaction;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
 
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "account")
+@Table(name = "accounts")
 public class Account {
 
 

@@ -12,7 +12,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "transaction")
+@Table(name = "transactions")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,7 +39,7 @@ public class Transaction {
 
     // Transition
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn
+    @JoinColumn(name = "account_id")
     private Account account;
 
 }
